@@ -1,4 +1,4 @@
-class TaskManager < ApplicationController
+class TasksController < ApplicationController
     def index 
         @tasks = Task.all
     end
@@ -40,7 +40,7 @@ class TaskManager < ApplicationController
     end
 
     def task_params
-        params.require(:task),permit(:title, :description)
+        params.require(:task).permit(:title, :description)
     end
 end
 
